@@ -105,7 +105,7 @@ export default function DnD() {
       <form action="" className='justify-self-center sm:text-[15px] text-xs grid grid-cols-4 md:w-[70%] lg:w-[50%] w-[90%] gap-1' id='myForm' onSubmit={(e)=>addTask(e)}>
         <input type="text" name='title' id='title' className='bg-blue-200 col-span-3 sm:py-2 py-1 px-2 sm:px-4 mb-4 rounded' placeholder='Title...' required/>
         <button type='submit' id='addBtn' className="mb-4 bg-green-500 text-white sm:py-2 py-1 px-2 sm:px-4 rounded">
-        + Add Task</button>
+        + Add</button>
       <input type="text" name='description' id='desc' className='bg-blue-200 col-span-4 sm:py-2 py-1 px-2 sm:px-4 mb-4 rounded' placeholder='Description...' required/>
         
       </form>
