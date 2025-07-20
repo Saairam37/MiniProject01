@@ -94,7 +94,7 @@ export default function DnD() {
     }
     }
     const addBtn = document.getElementById('addBtn');
-    addBtn.innerHTML = "+ Add Task";
+    addBtn.innerHTML = "+ Add";
     const form = document.getElementById('myForm');
     form.reset(); 
   };
