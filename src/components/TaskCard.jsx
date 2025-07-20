@@ -5,7 +5,7 @@ export default function TaskCard({ task, taskss, setTasks, editItem }) {
   const { attributes, listeners, setNodeRef, transform, transition, } = useSortable({ id: task.id });
   const style = {
     transform: CSS.Translate.toString(transform),
-    transition,
+    transition, touchAction: 'none' 
   };
 
   

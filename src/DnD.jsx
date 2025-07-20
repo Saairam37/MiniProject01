@@ -26,11 +26,12 @@ export default function DnD() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }, [tasks]);
 
-  const sensors = useSensors(
-  useSensor(MouseSensor, { activationConstraint: { distance: 8 }}),
-  useSensor(TouchSensor, { activationConstraint: { delay: 300, tolerance: 8 }}),
-  useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates })
-    );
+  const mouseSensor = useSensor(MouseSensor, { activationConstraint: { distance: 2 } });
+    const pointerSensor = useSensor(PointerSensor, { activationConstraint: { distance: 2 } });
+  const touchSensor = useSensor(TouchSensor, { activationConstraint: { delay: 300, tolerance: 8 }});
+  const keyboardSensor =useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates });
+
+    const sensors = useSensors(mouseSensor, pointerSensor, touchSensor,keyboardSensor);
   const columns = ['todo', 'inprogress', 'done'];
 
   const findIndex = (id, items) => items.findIndex(t => t.id === id);
