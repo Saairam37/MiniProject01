@@ -2,10 +2,9 @@ import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from '@dnd-kit/utilities';
 
 export default function TaskCard({ task, taskss, setTasks, editItem }) {
-  const { attributes, listeners, setNodeRef, transform, transition, } = useSortable({ id: task.id });
+  const { attributes, listeners, setNodeRef, transform, transition} = useSortable({ id: task.id });
   const style = {
-    transform: CSS.Translate.toString(transform),
-    transition, touchAction: 'none' 
+    transform: CSS.Translate.toString(transform),transition,  
   };
 
   
@@ -13,7 +12,7 @@ export default function TaskCard({ task, taskss, setTasks, editItem }) {
   return (
     <div
       ref={setNodeRef}
-      style={style}
+      style={{style, touchAction: 'none'}}
       {...listeners}
       {...attributes}
       className="bg-white p-4 w-full mb-2 rounded shadow cursor-grab relative"
