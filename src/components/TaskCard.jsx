@@ -7,7 +7,6 @@ export default function TaskCard({ task, taskss, setTasks, editItem }) {
     transform: CSS.Translate.toString(transform),transition,  
   };
 
-  
 
   return (
     <div

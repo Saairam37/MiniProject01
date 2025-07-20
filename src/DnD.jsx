@@ -7,7 +7,6 @@ import {
   PointerSensor,
   MouseSensor,
   TouchSensor,
-  KeyboardSensor,
 } from '@dnd-kit/core';
 import {
   arrayMove,
@@ -27,11 +26,10 @@ export default function DnD() {
   }, [tasks]);
 
   const mouseSensor = useSensor(MouseSensor, { activationConstraint: { distance: 2 } });
-    const pointerSensor = useSensor(PointerSensor, { activationConstraint: { distance: 2 } });
-  const touchSensor = useSensor(TouchSensor, { activationConstraint: { delay: 300, tolerance: 8 }});
-  const keyboardSensor =useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates });
+    const pointerSensor = useSensor(PointerSensor, { activationConstraint: { distance: 2 }});
+    const touchSensor = useSensor(TouchSensor, { activationConstraint: { delay: 300, tolerance: 2 }});
 
-    const sensors = useSensors(mouseSensor, pointerSensor, touchSensor,keyboardSensor);
+    const sensors = useSensors(mouseSensor, pointerSensor, touchSensor);
   const columns = ['todo', 'inprogress', 'done'];
 
   const findIndex = (id, items) => items.findIndex(t => t.id === id);
